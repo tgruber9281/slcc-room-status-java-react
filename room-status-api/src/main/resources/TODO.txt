@@ -1,0 +1,20 @@
+//TODO use enums for room status option?
+//TODO use Long type for ids of objects/generated values
+//TODO add database connection
+//TODO JPARepository or CRUDRepository?
+//TODO All Rooms View
+//TODO Single Room View
+//TODO Models: Room, Status, ApptTypes, User, Profile,
+//TODO Users & Profiles
+//TODO check in/check out rooms
+//TODO room notes
+//TODO DTO for  Post mapping
+//TODO cors in PSVM
+
+//TODO V2 Chat
+//TODO V2 Learn SpringSecurity vs OAuth2
+//TODO note history
+
+
+//TODO V3 Settings
+//TODO V3 Administrators
