@@ -13,8 +13,14 @@
 
 //TODO V2 Chat
 //TODO V2 Learn SpringSecurity vs OAuth2
+//TODO JWT or JSession (https://github.com/HodgePodgeProjects/Feral-Cat-Tracker-KC)
 //TODO note history
+//TODO Forgot password
 
 
 //TODO V3 Settings
 //TODO V3 Administrators
+
+//Free mysql hosting
+
+//TODO add try-catch to controllers/services
