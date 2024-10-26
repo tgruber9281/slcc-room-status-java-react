@@ -37,12 +37,20 @@ public class Position {
     public Position() {
     }
     
-    public Position(String positionName) {
-        this.active = true;
+    public Position(boolean active, String positionName) {
+        this.active = active;
         this.positionName = positionName;
     }
     
     /* Custom methods */
+    
+    public void addStaff (Staff staff) {
+        staffPositionList.add(staff);
+    }
+    
+    public void removeStaff (Staff staff) {
+        staffPositionList.remove(staff);
+    }
     
     /* Getters and Setters */
     

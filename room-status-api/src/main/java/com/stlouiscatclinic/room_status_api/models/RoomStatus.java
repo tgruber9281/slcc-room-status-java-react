@@ -26,19 +26,27 @@ public class RoomStatus {
     private String statusName;
     
     @OneToMany
-    @JoinColumn (name = "room_id")
+    @JoinColumn (name = "roomStatus_id")
     private final Set<Room> rooms = new HashSet<>();
     
     /** Constructor(s) */
     public RoomStatus() {
     }
     
-    public RoomStatus(String statusName) {
-        this.active = true;
+    public RoomStatus(boolean active, String statusName) {
+        this.active = active;
         this.statusName = statusName;
     }
     
     /** Custom methods */
+    
+    public void addRoom (Room room) {
+        rooms.add(room);
+    }
+    
+    public void removeRoom (Room room) {
+        rooms.remove(room);
+    }
     
     /** Getters and Setters */
     

@@ -1,4 +1,4 @@
-package com.stlouiscatclinic.room_status_api.uploadDTOs;
+package com.stlouiscatclinic.room_status_api.dto.upload;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

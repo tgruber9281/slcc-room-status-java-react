@@ -3,8 +3,8 @@ package com.stlouiscatclinic.room_status_api.controllers;
 import com.stlouiscatclinic.room_status_api.models.Staff;
 import com.stlouiscatclinic.room_status_api.repositories.StaffRepository;
 import com.stlouiscatclinic.room_status_api.services.AuthenticationService;
-import com.stlouiscatclinic.room_status_api.uploadDTOs.LoginFormDTO;
-import com.stlouiscatclinic.room_status_api.uploadDTOs.RegistrationFormDTO;
+import com.stlouiscatclinic.room_status_api.dto.upload.LoginFormDTO;
+import com.stlouiscatclinic.room_status_api.dto.upload.RegistrationFormDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -73,6 +73,14 @@ public class AuthenticationController {
         authenticationService.setStaffSessionKey(request.getSession(), staff);
         responseBody.put("message", "User successfully logged in");
         responseBody.put("administrator", String.valueOf(staff.isAdministrator()));
+        return ResponseEntity.status(HttpStatus.OK).body(responseBody);
+    }
+    
+    @PostMapping("/public/logout")
+    public ResponseEntity<Map<String,String>> processLogout(HttpServletRequest request){
+        Map<String, String> responseBody = new HashMap<>();
+        request.getSession().invalidate();
+        responseBody.put("message","User logged out");
         return ResponseEntity.status(HttpStatus.OK).body(responseBody);
     }
 }

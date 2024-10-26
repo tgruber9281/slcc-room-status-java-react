@@ -37,6 +37,25 @@ public class ApptType {
     /** Custom methods */
     
     /** Getters and Setters */
+    public long getId() {
+        return id;
+    }
+    
+    public boolean isActive() {
+        return active;
+    }
+    
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+    
+    public String getApptTypeName() {
+        return apptTypeName;
+    }
+    
+    public void setApptTypeName(String apptTypeName) {
+        this.apptTypeName = apptTypeName;
+    }
     
     /** toString */
     

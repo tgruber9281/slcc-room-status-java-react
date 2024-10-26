@@ -69,11 +69,12 @@ public class Staff {
     public Staff() {
     }
     
-    public Staff(boolean administrator, String emailAddress, String pwdHash, String pinHash,
+    public Staff(boolean administrator, boolean active, String emailAddress, String pwdHash,
+                 String pinHash,
                  String firstName,
                  String lastName) {
         this.administrator = administrator;
-        this.active = true;
+        this.active = active;
         this.emailAddress = emailAddress;
         this.pwdHash = encoder.encode(pwdHash);
         this.pinHash = encoder.encode(pinHash);
@@ -95,8 +96,20 @@ public class Staff {
         positionList.add(position);
     }
     
+    public void emptyPositionList() {
+        positionList.clear();
+    }
+    
+    public void removePosition (Position position) {
+        positionList.remove(position);
+    }
+    
     public void addRoom (Room room) {
         roomStaffList.add(room);
+    }
+    
+    public void removeRoom (Room room) {
+        roomStaffList.remove(room);
     }
     
     /** Getters and Setters */
@@ -165,14 +178,8 @@ public class Staff {
     @Override
     public String toString() {
         return "Staff{" +
-                "id=" + id +
-                ", emailAddress='" + emailAddress + '\'' +
-                ", pwdHash='" + pwdHash + '\'' +
-                ", pinHash='" + pinHash + '\'' +
-                ", firstName='" + firstName + '\'' +
+                "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", positionList=" + positionList +
-                ", roomStaffList=" + roomStaffList +
                 '}';
     }
     

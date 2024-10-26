@@ -36,12 +36,20 @@ public class Room {
     public Room() {
     }
     
-    public Room(String roomName) {
-        this.active = true;
+    public Room(boolean active, String roomName) {
+        this.active = active;
         this.roomName = roomName;
     }
     
     /** Custom methods */
+    
+    public void addStaff (Staff staff) {
+        staffRoomList.add(staff);
+    }
+    
+    public void removeStaff (Staff staff) {
+        staffRoomList.remove(staff);
+    }
     
     /** Getters and Setters */
     public long getId() {
@@ -80,11 +88,7 @@ public class Room {
     @Override
     public String toString() {
         return "Room{" +
-                "id=" + id +
-                ", active=" + active +
-                ", roomNumber=" + roomName +
-                ", roomStatus=" + roomStatus +
-                ", staffRoomList=" + staffRoomList +
+                "roomName='" + roomName + '\'' +
                 '}';
     }
     

@@ -1,4 +1,4 @@
-package com.stlouiscatclinic.room_status_api.uploadDTOs;
+package com.stlouiscatclinic.room_status_api.dto.upload;
 
 import java.util.List;
 
@@ -12,11 +12,11 @@ public class RegistrationFormDTO extends LoginFormDTO{
     
     private String verifyPassword;
     private boolean administrator;
+    private boolean active;
     private String pin;
     private String verifyPin;
     private String firstName;
     private String lastName;
-    //TODO test RegistrationFormDTO and List<Integer>. List<String>?
     private List<Integer> positionIdList;
     
     /* Getters and Setters */
@@ -28,6 +28,8 @@ public class RegistrationFormDTO extends LoginFormDTO{
     public boolean isAdministrator() {
         return administrator;
     }
+    
+    public boolean getActive() {return active; }
     
     public String getPin() {
         return pin;

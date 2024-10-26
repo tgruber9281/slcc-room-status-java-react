@@ -27,13 +27,13 @@ public class AuthenticationFilter implements HandlerInterceptor {
     @Autowired
     AuthenticationService authenticationService;
     
-    private static final List<String> whitelist = Arrays.asList("/api/public", "/css");
+    private static final List<String> whitelist = Arrays.asList("/public", "/css");
     
     /* Custom methods */
     
     private static boolean isWhitelisted(String path) {
         for (String pathRoot : whitelist) {
-            if (path.startsWith(pathRoot)) {
+            if (path.contains(pathRoot)) {
                 return true;
             }
         }
